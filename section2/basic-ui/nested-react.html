@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Simple HTML using React</title>
+    <link rel="stylesheet" href="./css/index.css" />
+  </head>
+  <body>
+    <h1>I am a super heading</h1>
+    <div id="root">
+      <h2>Hello, I am child of Root</h2>
+    </div>
+    <h1>I am a super footer</h1>
+    <script src="./react-lib/react.development.js"></script>
+    <script src="./react-lib/react-dom.development.js"></script>
+    <script>
+      const nestedElement = React.createElement("div", { id: "parent" }, [
+        React.createElement("div", { id: "child1" }, [
+          React.createElement(
+            "h1",
+            { style: { color: "blue" } },
+            "Hi, I'm Bob the Builder!"
+          ),
+          React.createElement("h2", {}, "I can fix it!"),
+        ]),
+        React.createElement("div", { id: "child2" }, [
+          React.createElement(
+            "h1",
+            { style: { color: "orange" } },
+            "Hi, I'm Dora the Explorer!"
+          ),
+          React.createElement("h2", {}, "Let's go exploring!"),
+        ]),
+      ]);
+
+      const root = ReactDOM.createRoot(document.getElementById("root"));
+      root.render(nestedElement);
+    </script>
+  </body>
+</html>

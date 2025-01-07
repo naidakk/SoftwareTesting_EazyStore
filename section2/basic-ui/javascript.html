@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Simple Webpage with JS</title>
+    <link rel="stylesheet" href="./css/index.css" />
+  </head>
+  <body>
+    <div id="root"></div>
+
+    <script>
+      // Generate a random number between 1 and 100
+      const randomNumber = Math.floor(Math.random() * 100) + 1;
+      // Create a new element to display the random number
+      const numberElement = document.createElement("h1");
+      numberElement.innerHTML = `Generated Number: ${randomNumber}`;
+      const resultElement = document.createElement("h2");
+      if (randomNumber % 2 == 0) {
+        resultElement.innerHTML = "The number is even!";
+      } else {
+        resultElement.innerHTML = "The number is odd!";
+      }
+
+      // Get the root element and append the generated elements
+      const root = document.getElementById("root");
+      root.appendChild(numberElement);
+      root.appendChild(resultElement);
+    </script>
+  </body>
+</html>
