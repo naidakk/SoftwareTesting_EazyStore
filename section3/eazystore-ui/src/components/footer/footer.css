@@ -1,0 +1,38 @@
+.footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+}
+
+.footer a {
+    color: #5B21B6;
+    font-weight: 600;
+    padding: 0 0.25rem;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer a:hover {
+    color: #1a202c;
+}
+
+.footer-icon {
+    color: #dc2626;
+    margin: 0 0.25rem;
+    animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+
+    0%,
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+
+    50% {
+        transform: scale(1.1);
+        opacity: 0.75;
+    }
+}
