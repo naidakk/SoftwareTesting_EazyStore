@@ -20,6 +20,7 @@ public class ProductController {
 
     @GetMapping
     public List<ProductDto> getProducts() { // DTO Pattern
+        System.out.println("Inside getProducts()");
         List<ProductDto> productList = iProductService.getProducts();
         return productList;
     }
