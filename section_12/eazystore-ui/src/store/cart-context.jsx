@@ -121,6 +121,7 @@ export const CartProvider = ({ children }) => {
   const clearCart = () => {
     dispatch({ type: CLEAR_CART });
   };
+
   // Calculate total quantity
   const totalQuantity = cart.reduce((acc, item) => acc + item.quantity, 0);
 
