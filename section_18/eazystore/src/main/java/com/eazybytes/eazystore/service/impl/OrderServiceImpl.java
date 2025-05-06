@@ -38,7 +38,7 @@ public class OrderServiceImpl implements IOrderService {
         // Map OrderItems
         List<OrderItem> orderItems = orderRequest.items().stream().map(item -> {
             OrderItem orderItem = new OrderItem();
-            //orderItem.setOrder(order);
+            orderItem.setOrder(order);
             Product product = productRepository.findById(item.productId())
                     .orElseThrow(() -> new ResourceNotFoundException("Product", "ProductID",
                             item.productId().toString()));
