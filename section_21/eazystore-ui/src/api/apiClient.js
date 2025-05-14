@@ -45,6 +45,7 @@ apiClient.interceptors.response.use(
       const jwtToken = localStorage.getItem("jwtToken");
       if (jwtToken) {
         localStorage.removeItem("jwtToken");
+        localStorage.removeItem("user");
         window.location.href = "/login";
       }
     }
