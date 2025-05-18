@@ -6,6 +6,8 @@ const cartSlice = createSlice({
   name: "cart",
   initialState: initialCart,
   reducers: {
+    // addToCart() is not a normal function; it is a Redux action creator:
+    // const addToCart = (payload) => ({ type: 'cart/addToCart', payload })
     addToCart(state, action) {
       const { product, quantity } = action.payload;
       const existingItem = state.find(
