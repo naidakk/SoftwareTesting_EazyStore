@@ -1,0 +1,327 @@
+{
+	"info": {
+		"_postman_id": "50b5df0a-f22d-4146-82c5-d6908af61b4a",
+		"name": "ReactSpringBootFullStack",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "1599575"
+	},
+	"item": [
+		{
+			"name": "RESTAPIs",
+			"item": [
+				{
+					"name": "products",
+					"item": [
+						{
+							"name": "getProducts",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/api/v1/products",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"v1",
+										"products"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "contacts",
+					"item": [
+						{
+							"name": "createContact",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"Madan\",\n    \"email\": \"tutor@eazybytes.com\",\n    \"mobileNumber\" : \"2234444444\",\n    \"message\" : \"Want to connect with your team\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/api/v1/contacts",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"v1",
+										"contacts"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "GetContactInfo",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/api/v1/contacts",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"v1",
+										"contacts"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "logging",
+					"item": [
+						{
+							"name": "testLogging",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/api/v1/logging",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"v1",
+										"logging"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "dummy",
+			"item": [
+				{
+					"name": "createUser",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\" : \"Madan Reddy\",\n    \"mobileNumber\" : \"1221212121\",\n    \"email\" : \"tutor@eazybytes.com\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/dummy/create-user",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"dummy",
+								"create-user"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "queryParam",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "eazystore",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "madan",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/dummy/search?name=Madan",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"dummy",
+								"search"
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "Madan"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "miltipleQueryParam",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/dummy/multiple-search?firstName=Madan&lastName=Reddy",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"dummy",
+								"multiple-search"
+							],
+							"query": [
+								{
+									"key": "firstName",
+									"value": "Madan"
+								},
+								{
+									"key": "lastName",
+									"value": "Reddy"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "pathVariable",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/dummy/user/map/123",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"dummy",
+								"user",
+								"map",
+								"123"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "headers",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "User-Location",
+								"value": "Hyderabad",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/api/v1/dummy/headers",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"dummy",
+								"headers"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "requestEntity",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\" : \"Madan Reddy\",\n    \"mobileNumber\" : \"1221212121\",\n    \"email\" : \"tutor@eazybytes.com\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/dummy/request-entity?name=Madan&age=25",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"dummy",
+								"request-entity"
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "Madan"
+								},
+								{
+									"key": "age",
+									"value": "25"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
