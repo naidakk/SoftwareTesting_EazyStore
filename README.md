@@ -40,15 +40,14 @@ Node.js / NPM Optional, for frontend React/Vite connection
 
 ## Clone the repository
 
-git clone &lt;https://github.com/naidakk/fullstack-react-springboot.git&gt;
+`git clone https://github.com/naidakk/fullstack-react-springboot.git`
 
-## Database Setup
 
-1.Pull the MySQL Docker image:
+## Pull the MySQL Docker image:
 
-docker pull mysql:8
+`docker pull mysql:8`
 
-# 2.Run the MySQL container:
+## Run the MySQL container:
 
 docker run --name eazystore-db\
 
@@ -58,31 +57,31 @@ docker run --name eazystore-db\
 
 -p 3306:3306\
 
--d mysql:8
+-d mysql:8 
 
 # Build the backend (Spring Boot)
-
-mvn clean install
+`cd eazystore`
+`mvn clean install`
 
 ## Run the backend via Maven:
 
-mvn spring-boot:run
+`mvn spring-boot:run`
 
 By default, the app will run on http://localhost:8080
 
-# Install frontend dependencies
+## Install frontend dependencies
 
-cd EazyStore-ui
+`cd eazystore-ui`
 
-npm install
+`npm install`
 
 ## Start the frontend:
 
-npm run dev
+`npm run dev`
 
 The frontend will communicate with the backend at http://localhost:8080.
 
-# Swagger & Actuator Endpoints
+## Swagger & Actuator Endpoints
 
 Swagger UI access:
 
