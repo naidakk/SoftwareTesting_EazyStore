@@ -1,99 +1,114 @@
 # EazyStore Installation and Setup Guide
 
-# 1.Overview
+## 1. Overview
 
 EazyStore is a backend project for an e-commerce application built with Spring Boot. It provides APIs for managing products and orders.
 
-## Key Features:
+### Key Features
 
-· Spring Boot 3.4.3 backend
+* Spring Boot 3.4.3 backend
+* Java 21
+* MySQL database
+* Spring Data JPA for ORM
+* Spring Security with JWT
+* Stripe payment integration
+* Actuator for monitoring
+* Swagger/OpenAPI documentation
+* Local frontend connection (React/Vite)
 
-·Java 21
-
-· MySQL database
-
-·Spring Data JPA for ORM
-
-·Spring Security with JWT
-
-· Stripe payment integration
-
-**·** Actuator for monitoring
-
-**·** Swagger/OpenAPI documentation
-
-·Local frontend connection (React/Vite)
-
-## Prerequisites
+## 2. Prerequisites
 
 Before starting, ensure your system has the following installed:
 
-Java 21 (OpenJDK or Oracle JDK)
+| Component | Version / Notes |
+|-----------|----------------|
+| Java | 21 (OpenJDK or Oracle JDK) |
+| Maven | 3.8+ |
+| MySQL | 8.x (or compatible) |
+| IDE | IntelliJ IDEA, VS Code, or similar (optional) |
+| Node.js / NPM | Optional, for frontend React/Vite connection |
+| Docker | Docker Engine or Docker Desktop |
 
-Maven 3.8+
+## 3. Installation Steps
 
-Docker
+### 3.1 Clone the Repository
+```bash
+git clone https://github.com/naidakk/fullstack-react-springboot.git
+```
 
-IDE IntelliJ IDEA, VS Code, or similar (optional)
+### 3.2 Database Setup
 
-Node.js / NPM Optional, for frontend React/Vite connection
+1. Pull the MySQL Docker image:
+```bash
+docker pull mysql:8
+```
 
-## Clone the repository
+2. Run the MySQL container:
+```bash
+docker run --name eazystore-db \
+  -e MYSQL_ROOT_PASSWORD=root \
+  -e MYSQL_DATABASE=eazystore \
+  -p 3306:3306 \
+  -d mysql:8
+```
 
-`git clone https://github.com/naidakk/SoftwareTesting_EazyStore.git`
+3. Verify MySQL is running:
+```bash
+docker ps
+```
 
+You should see the `eazystore-db` container in the list.
 
-## Pull the MySQL Docker image:
+### 3.3 Start the Backend
 
-`docker pull mysql:8`
+1. Open your IDE for backend development (IntelliJ IDEA, for example)
 
-## Run the MySQL container:
+2. Navigate to: `SoftwareTesting_EazyStore` → `EazyStore-app` → `eazystore`
 
-docker run --name eazystore-db\
+3. Run in the embedded terminal:
+```bash
+mvn clean install
+```
 
--e MYSQLROOTPASSWORD=root \
+4. Run the backend via Maven:
+```bash
+mvn spring-boot:run
+```
 
--e MYSQLDATABASE=eazystore \
+By default, the backend will run on `http://localhost:8080`
 
--p 3306:3306\
+### 3.4 Start the Frontend
 
--d mysql:8 
+1. Keep the backend project running and open the frontend in a new project window
 
-# Build the backend (Spring Boot)
-`cd eazystore`
-`mvn clean install`
+2. Navigate to: `SoftwareTesting_EazyStore` → `EazyStore-app` → `eazystore-ui`
 
-## Run the backend via Maven:
+3. Install frontend dependencies:
+```bash
+npm install
+```
 
-`mvn spring-boot:run`
+4. Start the frontend:
+```bash
+npm run dev
+```
 
-By default, the app will run on http://localhost:8080
+The development server will start and display the local URL (typically `http://localhost:5173/`). Access the application by opening this URL in your web browser.
 
-## Install frontend dependencies
+## 4. API Documentation & Monitoring
 
-`cd eazystore-ui`
+### Swagger UI
 
-`npm install`
-
-## Start the frontend:
-
-`npm run dev`
-
-The frontend will communicate with the backend at http://localhost:8080.
-
-## Swagger & Actuator Endpoints
-
-Swagger UI access:
-
+Access the Swagger UI for API documentation:
+```
 http://localhost:8080/swagger-ui/index.html
+```
 
-## Actuator endpoints:
+### Actuator Endpoints
 
-- Full health:http://localhost:8080/eazystore/actuator/health
+Monitor application health and metrics:
 
--All endpoints: http://localhost:8080/eazystore/actuator
-
-- Config, environment, info: accessible under /eazystore/actuator/..
-
-
+- **Full health**: `http://localhost:8080/eazystore/actuator/health`
+- **All endpoints**: `http://localhost:8080/eazystore/actuator`
+- **Config, environment, info**: Accessible under `/eazystore/actuator/...`
 
