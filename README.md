@@ -40,7 +40,7 @@ Node.js / NPM Optional, for frontend React/Vite connection
 
 ## Clone the repository
 
-`git clone https://github.com/naidakk/fullstack-react-springboot.git`
+`git clone https://github.com/naidakk/SoftwareTesting_EazyStore.git`
 
 
 ## Pull the MySQL Docker image:
