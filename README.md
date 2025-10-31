@@ -33,7 +33,7 @@ Before starting, ensure your system has the following installed:
 
 ### 3.1 Clone the Repository
 ```bash
-git clone https://github.com/naidakk/fullstack-react-springboot.git
+git clone https://github.com/naidakk/SoftwareTesting_EazyStore.git
 ```
 
 ### 3.2 Database Setup
