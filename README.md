@@ -1,4 +1,12 @@
-# EazyStore Installation and Setup Guide
+
+  <span style="font-size: 0.8em; text-align: right;">
+    <h1> EazyStore Installation and Setup Guide</h1>
+    Created by:<br>
+    Ludovic Devaux<br>
+    Naida Kaljanac<br>
+    Ejonë Analumi
+  </span>
+
 
 ## 1. Overview
 
